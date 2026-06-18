@@ -14,7 +14,7 @@ In practice you mostly use the Web UI: a chat page in the browser where you send
 
 ## What changed from the single-file version
 
-This started as one Python file you run in the terminal (it's kept around as the `v0.1.0` release). Honestly, most of the "brain" was already there back then: reading/writing/editing files, running bash, grep and glob, remembering things across sessions (a memory file plus auto-generated session tags, and a tool to search old chats), compressing the context when it gets long, taking a git snapshot before touching files, and stopping to ask before dangerous commands.
+This started as one Python file you run in the terminal (it's now kept in `Version1/` for comparison). Honestly, most of the "brain" was already there back then: reading/writing/editing files, running bash, grep and glob, remembering things across sessions (a memory file plus auto-generated session tags, and a tool to search old chats), compressing the context when it gets long, taking a git snapshot before touching files, and stopping to ask before dangerous commands.
 
 The new version isn't really about making the agent smarter, it's mostly about how you use it. I pulled the core logic out of that single file into a reusable engine and put a web UI on top, basically a ChatGPT-style chat page, so I can use it in a browser instead of living in the terminal.
 
