@@ -1,0 +1,27 @@
+{
+  "PreToolUse": [
+    {
+      "tool": "general_bash",
+      "command_matches": "rm -rf|git push --force|git reset --hard",
+      "action": "deny",
+      "message": "本项目禁止破坏性命令"
+    }
+  ],
+  "PostToolUse": [
+    {
+      "tool": ["edit", "write_file"],
+      "file_matches": "\\.py$",
+      "run": "python3 -m py_compile {file}"
+    },
+    {
+      "tool": ["edit", "write_file"],
+      "file_matches": "\\.tsx?$",
+      "run": "cd frontend && npm run typecheck"
+    },
+    {
+      "tool": ["edit", "write_file"],
+      "file_matches": "\\.json$",
+      "run": "python3 -m json.tool {file} > /dev/null"
+    }
+  ]
+}
